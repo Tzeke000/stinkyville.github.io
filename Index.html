@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office of the Mayor | Nataly Marrero</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #00509E;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #003366;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: 30%;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label, form input {
+            margin: 5px 0;
+        }
+
+        form button {
+            background-color: #00509E;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        form button:hover {
+            background-color: #003366;
+        }
+
+        #confirmation-message {
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Office of the Mayor</h1>
+        <h2>Mayor Nataly Marrero</h2>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#bio">Biography</a></li>
+            <li><a href="#initiatives">Initiatives</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Biography Section -->
+    <section id="bio">
+        <h2>About Mayor Marrero</h2>
+        <p>Since 2015, <strong>Nataly Marrero</strong> has been an integral figure in the governance of <strong>Stinkyville</strong>, a town renowned for its unique aroma and proud dedication to the art of stench. Rising through the ranks with an unwavering commitment to olfactory excellence, she became the official <strong>Mayor of Stinkyville in 2022</strong>. Under her leadership, the town has embraced its identity more than ever, solidifying its reputation as the stinkiest place on Earth.</p>
+
+        <p>Born and raised in the heart of Stinkyville, Mayor Marrero’s connection to the town’s signature scent runs deep. From a young age, she recognized that stink was not just a byproduct of life in Stinkyville—it was a <strong>way of life</strong>. While others sought fresh air, Marrero found inspiration in the rich tapestry of smells that filled the town’s streets, from the pungent perfume of the sulfur springs to the unmistakable aroma of the legendary <strong>Rotten Egg Festival</strong>.</p>
+
+        <p>With a <strong>background in being stinky and really smelly</strong>, Marrero made it her mission to elevate the town’s scent to new heights. She studied <strong>advanced odor dynamics</strong>, worked closely with the <strong>Institute of Stink Sciences</strong>, and even spent a year abroad in <strong>Pewtopia</strong>, the sister city of Stinkyville, to refine her understanding of the most effective methods of maintaining and expanding the town’s signature smell.</p>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Photo Gallery</h2>
+        <div class="gallery">
+            <img src="mayor1.jpg" alt="Mayor Marrero at a town event">
+            <img src="mayor2.jpg" alt="Mayor Marrero giving a speech">
+            <img src="mayor3.jpg" alt="Mayor Marrero with local residents">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact the Mayor</h2>
+        <p>📍 Stinkyville Town Hall, 123 Main St., Stinkyville</p>
+        <p>📞 (555) 123-4567</p>
+        <p>📧 mayor@natalymarrero.gov</p>
+
+        <h3>Schedule a Meeting</h3>
+        <form id="meeting-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" required>
+
+            <button type="submit">Request Meeting</button>
+        </form>
+        <p id="confirmation-message"></p>
+    </section>
+
+    <script>
+        document.getElementById("meeting-form").addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevent actual form submission
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let date = document.getElementById("date").value;
+
+            if (name && email && date) {
+                document.getElementById("confirmation-message").innerText = `Thank you, ${name}. Your meeting request for ${date} has been received.`;
+                document.getElementById("meeting-form").reset();
+            } else {
+                document.getElementById("confirmation-message").innerText = "Please fill out all fields.";
+            }
+        });
+    </script>
+
+</body>
+</html>
